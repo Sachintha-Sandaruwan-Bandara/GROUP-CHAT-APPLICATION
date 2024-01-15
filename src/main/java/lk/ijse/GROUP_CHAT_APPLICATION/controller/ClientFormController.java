@@ -19,19 +19,23 @@ import java.net.Socket;
 public class ClientFormController {
 
     @FXML
-    public static Label lblName;
+    private  Label lblName;
     @FXML
     private ScrollPane scrollPane;
 
     @FXML
     private TextField txtField;
+    public   String name="";
 
     @FXML
     private VBox vBox;
     Socket remoteSocket;
     String massage="";
+    public static ClientFormController clientFormController;
     ClientChatRowFormController clientChatRowFormController = new ClientChatRowFormController();
     public void initialize(){
+        lblName.setText(name);
+        clientFormController=this;
         System.out.println("client");
         new Thread(() -> {
             try {
@@ -87,4 +91,5 @@ public class ClientFormController {
         }
 
     }
+
 }

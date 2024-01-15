@@ -7,6 +7,7 @@ package lk.ijse.GROUP_CHAT_APPLICATION.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
@@ -35,9 +36,20 @@ public class LoginPageFormController {
             boolean isUserSaved = pstm.executeUpdate() > 0;
             if (isUserSaved) {
                 System.out.println("usr saved!!");
-                Stage stage = new Stage();
-                Parent root = FXMLLoader.load(Launcher.class.getResource("/view/clientForm.fxml"));
+//                Stage stage = new Stage();
+//                Parent root = FXMLLoader.load(Launcher.class.getResource("/view/clientForm.fxml"));
+//                Scene scene = new Scene(root);
+//                stage.setScene(scene);
+//                stage.setTitle("");
+//                stage.show();
+
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/clientForm.fxml"));
+                ClientFormController clientFormController = new ClientFormController();
+                fxmlLoader.setController(clientFormController);
+                clientFormController.name=txtUserName.getText();
+                Parent root= fxmlLoader.load();
                 Scene scene = new Scene(root);
+                Stage stage= new Stage();
                 stage.setScene(scene);
                 stage.setTitle("");
                 stage.show();
