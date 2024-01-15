@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.GROUP_CHAT_APPLICATION.controller.LoginPageFormController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="445.0" prefWidth="721.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.GROUP_CHAT_APPLICATION.controller.LoginPageFormController">
+   <children>
+      <Pane layoutX="370.0" layoutY="17.0" opacity="0.13" prefHeight="411.0" prefWidth="331.0" style="-fx-background-color: white; -fx-background-radius: 10;" />
+      <JFXButton layoutX="459.0" layoutY="373.0" prefHeight="33.0" prefWidth="159.0" style="-fx-background-color: GRA #2f3542Y; -fx-background-radius: 10; -fx-border-color: white; -fx-border-radius: 10;" text="Sign up for an account" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="txtUserName" layoutX="418.0" layoutY="138.0" prefHeight="37.0" prefWidth="227.0" promptText="user name" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: white;" />
+      <JFXButton layoutX="482.0" layoutY="225.0" onAction="#btnLoginOnAction" prefHeight="33.0" prefWidth="105.0" style="-fx-background-color: #c0392b; -fx-background-radius: 10;" text="login" textFill="#fdfdfd" />
+      <Line endX="34.66668701171875" endY="-0.4902191162109375" layoutX="463.0" layoutY="342.0" startX="-45.0" startY="-0.4902191162109375" stroke="WHITE" />
+      <Line endX="34.66668701171875" endY="-0.4902191162109375" layoutX="635.0" layoutY="341.0" startX="-45.0" startY="-0.4902191162109375" stroke="WHITE" />
+      <Text fill="WHITE" layoutX="534.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR" wrappingWidth="20.13665771484375">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="389.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="welcome back " wrappingWidth="299.47003173828125">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Text>
+   </children>
 </AnchorPane>
