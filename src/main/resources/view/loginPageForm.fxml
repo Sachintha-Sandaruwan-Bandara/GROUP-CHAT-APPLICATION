@@ -8,7 +8,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.GROUP_CHAT_APPLICATION.controller.LoginPageFormCotroller"
+            fx:controller="lk.ijse.GROUP_CHAT_APPLICATION.controller.LoginPageFormController"
             prefHeight="400.0" prefWidth="600.0">
 
 </AnchorPane>
