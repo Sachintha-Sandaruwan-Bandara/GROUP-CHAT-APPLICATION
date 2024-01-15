@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="504.0" prefWidth="831.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.GROUP_CHAT_APPLICATION.controller.ClientFormController">
+   <children>
+      <ScrollPane fx:id="scrollPane" layoutX="24.0" layoutY="52.0" prefHeight="367.0" prefWidth="787.0">
+         <content>
+            <VBox fx:id="vBox" prefHeight="42.0" prefWidth="784.0" />
+         </content>
+      </ScrollPane>
+      <TextField fx:id="txtField" layoutX="24.0" layoutY="439.0" prefHeight="39.0" prefWidth="600.0" promptText="type here" />
+      <Button layoutX="742.0" layoutY="439.0" mnemonicParsing="false" onAction="#btnSendOnAction" prefHeight="39.0" prefWidth="77.0" text="send" />
+      <JFXButton layoutX="632.0" layoutY="444.0" onAction="#btnImojiOnAction" text="imoji" />
+      <JFXButton layoutX="685.0" layoutY="445.0" onAction="#btnFilesOnAction" text="files" />
+   </children>
+</AnchorPane>

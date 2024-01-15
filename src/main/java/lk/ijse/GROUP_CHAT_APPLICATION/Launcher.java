@@ -19,7 +19,7 @@ public class Launcher extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(Launcher.class.getResource("/view/loginPageForm.fxml"));
+        Parent root = FXMLLoader.load(Launcher.class.getResource("/view/clientForm.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         //Image icon= new Image("images/logo.png");
