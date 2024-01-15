@@ -8,18 +8,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane prefHeight="504.0" prefWidth="831.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane prefHeight="504.0" prefWidth="447.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ScrollPane fx:id="scrollPane" layoutX="24.0" layoutY="52.0" prefHeight="367.0" prefWidth="787.0">
+      <ScrollPane fx:id="scrollPane" layoutX="24.0" layoutY="52.0" prefHeight="367.0" prefWidth="405.0">
          <content>
-            <VBox fx:id="vBox" prefHeight="42.0" prefWidth="784.0" />
+            <VBox fx:id="vBox" prefHeight="42.0" prefWidth="399.0" />
          </content>
       </ScrollPane>
-      <TextField fx:id="txtField" layoutX="24.0" layoutY="439.0" prefHeight="39.0" prefWidth="600.0" promptText="type here" />
-      <Button layoutX="742.0" layoutY="439.0" mnemonicParsing="false" onAction="#btnSendOnAction" prefHeight="39.0" prefWidth="77.0" text="send" />
-      <JFXButton layoutX="632.0" layoutY="444.0" onAction="#btnImojiOnAction" text="imoji" />
-      <JFXButton layoutX="685.0" layoutY="445.0" onAction="#btnFilesOnAction" text="files" />
-      <Label fx:id="lblName" layoutX="390.0" layoutY="21.0" prefHeight="17.0" prefWidth="77.0" text="Label" />
+      <TextField fx:id="txtField" layoutX="24.0" layoutY="439.0" prefHeight="39.0" prefWidth="213.0" promptText="type here" />
+      <Button layoutX="362.0" layoutY="439.0" mnemonicParsing="false" onAction="#btnSendOnAction" prefHeight="39.0" prefWidth="77.0" text="send" />
+      <JFXButton layoutX="252.0" layoutY="444.0" onAction="#btnImojiOnAction" text="imoji" />
+      <JFXButton layoutX="305.0" layoutY="445.0" onAction="#btnFilesOnAction" text="files" />
+      <Label fx:id="lblName" layoutX="188.0" layoutY="27.0" prefHeight="17.0" prefWidth="77.0" text="Label" />
    </children>
 </AnchorPane>

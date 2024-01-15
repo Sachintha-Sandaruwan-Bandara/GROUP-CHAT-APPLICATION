@@ -7,5 +7,6 @@ package lk.ijse.GROUP_CHAT_APPLICATION;
 public class LauncherWrapper {
     public static void main(String[] args) {
         Launcher.main(args);
+
     }
 }

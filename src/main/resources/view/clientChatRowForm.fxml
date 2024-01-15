@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="57.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="42.0" prefWidth="399.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox layoutX="586.0" layoutY="4.0" prefHeight="17.0" prefWidth="195.0">
+      <VBox layoutX="205.0" layoutY="4.0" prefHeight="33.0" prefWidth="191.0">
          <children>
             <Text fx:id="text" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="191.47007751464844" />
             <VBox prefHeight="17.0" prefWidth="174.0">

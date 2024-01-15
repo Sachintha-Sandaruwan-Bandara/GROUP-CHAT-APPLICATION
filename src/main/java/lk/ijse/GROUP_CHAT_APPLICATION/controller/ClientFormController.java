@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
@@ -31,21 +32,26 @@ public class ClientFormController {
     private VBox vBox;
     Socket remoteSocket;
     String massage="";
-    public static ClientFormController clientFormController;
+
     ClientChatRowFormController clientChatRowFormController = new ClientChatRowFormController();
     public void initialize(){
         lblName.setText(name);
-        clientFormController=this;
-        System.out.println("client");
+
+
         new Thread(() -> {
+            System.out.println("client");
             try {
 
                 remoteSocket = new Socket("localhost", 3002);
+
+
+
+
                 DataInputStream dataInputStream = new DataInputStream(remoteSocket.getInputStream());
                 while (!massage.equals("exit")) {
                     massage = dataInputStream.readUTF();
-                    System.out.println("from server:  " + massage);
-                    clientChatRowFormController.setText(massage);
+//                    System.out.println("from server:  " + massage);
+//                    clientChatRowFormController.setText(massage);
 
 
                 }
@@ -68,8 +74,12 @@ public class ClientFormController {
     }
 
     @FXML
-    void btnSendOnAction(ActionEvent event) {
-        String text = txtField.getText();
+    void btnSendOnAction(ActionEvent event) throws IOException {
+        DataOutputStream dataOutputStream = new DataOutputStream(remoteSocket.getOutputStream());
+        String msg = txtField.getText();
+        dataOutputStream.writeUTF(msg);
+        dataOutputStream.flush();
+
         //create new v box to hold records
         VBox vBox1 = new VBox();
         vBox1.setSpacing(20);
@@ -82,7 +92,7 @@ public class ClientFormController {
 
         try {
             Node node = fxmlLoader.load();
-            clientChatRowFormController.setText(text);
+            clientChatRowFormController.setText(massage);
             vBox1.getChildren().add(node);
             vBox.getChildren().add(vBox1);
 
