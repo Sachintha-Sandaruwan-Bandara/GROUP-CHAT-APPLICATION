@@ -6,9 +6,15 @@ package lk.ijse.GROUP_CHAT_APPLICATION.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import lk.ijse.GROUP_CHAT_APPLICATION.Launcher;
 import lk.ijse.GROUP_CHAT_APPLICATION.db.DbConnection;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -29,10 +35,19 @@ public class LoginPageFormController {
             boolean isUserSaved = pstm.executeUpdate() > 0;
             if (isUserSaved) {
                 System.out.println("usr saved!!");
+                Stage stage = new Stage();
+                Parent root = FXMLLoader.load(Launcher.class.getResource("/view/clientForm.fxml"));
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.setTitle("");
+                stage.show();
+
             } else {
-                System.out.println("somthing went wrong");
+                System.out.println("something went wrong");
             }
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 

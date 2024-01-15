@@ -17,7 +17,7 @@
             </VBox>
          </children>
       </VBox>
-      <VBox layoutX="13.0" layoutY="11.0" prefHeight="17.0" prefWidth="195.0" visible="false">
+      <VBox layoutX="13.0" layoutY="11.0" prefHeight="17.0" prefWidth="195.0">
          <children>
             <Text fx:id="text2" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="191.47007751464844" />
             <VBox prefHeight="17.0" prefWidth="174.0">

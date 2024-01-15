@@ -3,20 +3,13 @@ package lk.ijse.GROUP_CHAT_APPLICATION.controller;
     @author Sachi_S_Bandara
     @created 1/15/2024 - 3:50 PM 
 */
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
+
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
-
-import java.net.URL;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ResourceBundle;
+
 
 public class ClientChatRowFormController  {
     @FXML
@@ -33,6 +26,9 @@ public class ClientChatRowFormController  {
 
     public void initialize() {
         setTime();
+
+
+
     }
 
 

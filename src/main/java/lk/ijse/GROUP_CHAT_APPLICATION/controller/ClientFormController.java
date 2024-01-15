@@ -7,13 +7,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
+import java.io.DataInputStream;
 import java.io.IOException;
+import java.net.Socket;
 
 public class ClientFormController {
+
+    @FXML
+    public static Label lblName;
     @FXML
     private ScrollPane scrollPane;
 
@@ -22,6 +28,30 @@ public class ClientFormController {
 
     @FXML
     private VBox vBox;
+    Socket remoteSocket;
+    String massage="";
+    ClientChatRowFormController clientChatRowFormController = new ClientChatRowFormController();
+    public void initialize(){
+        System.out.println("client");
+        new Thread(() -> {
+            try {
+
+                remoteSocket = new Socket("localhost", 3002);
+                DataInputStream dataInputStream = new DataInputStream(remoteSocket.getInputStream());
+                while (!massage.equals("exit")) {
+                    massage = dataInputStream.readUTF();
+                    System.out.println("from server:  " + massage);
+                    clientChatRowFormController.setText(massage);
+
+
+                }
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }).start();
+
+    }
 
     @FXML
     void btnFilesOnAction(ActionEvent event) {
@@ -42,7 +72,7 @@ public class ClientFormController {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/clientChatRowForm.fxml"));
         //create row controller
-        ClientChatRowFormController clientChatRowFormController = new ClientChatRowFormController();
+       // ClientChatRowFormController clientChatRowFormController = new ClientChatRowFormController();
         //controller set to fxml
         fxmlLoader.setController(clientChatRowFormController);
 
